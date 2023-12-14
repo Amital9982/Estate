@@ -3,6 +3,7 @@ import mongoose from "mongoose";
 import dotenv from "dotenv";
 import userRouter from "./routes/user.routes.js";
 dotenv.config();
+
 try {
   mongoose.connect(process.env.MONGO_URL);
   console.log("connected successfully");
@@ -10,7 +11,7 @@ try {
   console.log("Database connection error: " + err);
 }
 const app = express();
-
+app.use(express.json());
 const PORT = "4000";
 
 app.listen(PORT, () => {
