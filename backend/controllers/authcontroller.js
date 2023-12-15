@@ -1,5 +1,6 @@
 import User from "../models/user.model.js";
 import bcrypt from "bcryptjs";
+import { errorHandler } from "../utils/error.js";
 export const UserRegister = async (req, res, next) => {
   try {
     const { username, name, email, mobile, password } = req.body;
